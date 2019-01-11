@@ -1,0 +1,64 @@
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GET
+http :3000/api/v1/players/
+http :3000/api/v1/teams/
+
+GET 1
+http :3000/api/v1/players/5c384a54ff1c408fab44217a
+
+POST
+echo '{"name":"The Name", "position":"P", "throws":"R", "bats":"R", "team":"mariners"}' | http  post :3000/api/v1/players/
+
+echo '{"name":"The 2", "position":"P", "throws":"L", "bats":"L", "team":"twins"}' | http  post :3000/api/v1/players/
+
+echo '{"name":"team", "position":"P", "throws":"L", "bats":"L", "team":"twins"}' | http post :3000/api/v1/teams/
+
+
+PUT
+echo '{"name":"The 3", "position":"P", "throws":"L", "bats":"L", "team":"bears"}' | http put :3000/api/v1/players/5c384a54ff1c408fab44217a
+
+echo '{"name":"The Name", "position":"P", "throws":"R", "bats":"R", "team":"mariners"}' | http put :3000/api/v1/players/5c384a54ff1c408fab44217a
+
+
+DELETE
+echo '{"_id":"5c384a54ff1c408fab44217a"}' | http delete :3000/api/v1/players/5c385141ff1c408fab44217b
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GET
+http :3000/api/v1/category/
+http :3000/api/v1/product/
+
+GET 1
+http :3000/api/v1/players/5c384a54ff1c408fab44217a
+
+POST
+Category:
+echo '{"name":"winter clothing", "description":"Mens and womens clothing", "seasonal":"true"}' | http post :3000/api/v1/category/
+
+echo '{"name":"shoes", "description":"Mens and womens shoes", "seasonal":"false"}' | http post :3000/api/v1/category/
+
+Product:
+echo '{"name":"Winter Jacket", "category":"winter clothing", "color":"orange", "price":"90", "brand":"Colombia"}' | http post :3000/api/v1/product/
+
+echo '{"name":"Air Force One", "category":"shoes", "color":"red", "price":"100", "brand":"Nike"}' | http post :3000/api/v1/product/
+
+echo '{"name":"Jordans", "category":"shoes", "color":"white", "price":"120", "brand":"Nike"}' | http post :3000/api/v1/product/
+
+
+PUT
+echo '{"name":"The 3", "position":"P", "throws":"L", "bats":"L", "team":"bears"}' | http put :3000/api/v1/players/5c384a54ff1c408fab44217a
+
+echo '{"name":"The Name", "position":"P", "throws":"R", "bats":"R", "team":"mariners"}' | http put :3000/api/v1/players/5c384a54ff1c408fab44217a
+
+
+DELETE
+echo '{"_id":"5c384a54ff1c408fab44217a"}' | http delete :3000/api/v1/players/5c385141ff1c408fab44217b
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

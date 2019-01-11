@@ -1,15 +1,15 @@
-![CF](http://i.imgur.com/7v5ASc8.png) LAB
+![CF](http://i.imgur.com/7v5ASc8.png) LAB 14
 =================================================
 
-## Project Name
+## API Server
 
-### Author: Student/Group Name
+### Author: Fletcher LaRue
 
 ### Links and Resources
-* [repo](http://xyz.com)
-* [travis](http://xyz.com)
+* [repo](https://github.com/asdFletcher/14-orm-and-modeling)
+<!-- * [travis](http://xyz.com)
 * [back-end](http://xyz.com) (when applicable)
-* [front-end](http://xyz.com) (when applicable)
+* [front-end](http://xyz.com) (when applicable) -->
 
 #### Documentation
 * [swagger](http://xyz.com) (API assignments only)
