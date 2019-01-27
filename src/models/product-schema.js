@@ -12,4 +12,13 @@ const product = mongoose.Schema({
   brand: {type: String, required: true},
 });
 
+product.pre('save', function() {
+  try {
+    let newPrice = parseInt(this.price) + 0.99;
+    this.price = newPrice;
+  } catch (err) {
+    console.log('save error', err);
+  };
+});
+
 module.exports = mongoose.model('product', product);
