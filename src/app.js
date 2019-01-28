@@ -1,4 +1,8 @@
 'use strict';
+/**
+ * API Server Module
+ * @module src/app
+ */
 
 // 3rd Party Resources
 const express = require('express');
@@ -20,6 +24,9 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
+// Docs
+app.use('/docs', express.static('docs'));
+
 // Routes
 app.use(routerAPI);
 
@@ -29,6 +36,10 @@ app.use(errorHandler);
 
 let isRunning = false;
 
+/**
+ * Start Server on specified port
+ * @param port {integer}
+ */
 module.exports = {
   server: app,
   start: (port) => {

@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "lint": "eslint **/*.js",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json",
     "test": "jest --verbose",
     "test-watch": "jest --watchAll --verbose"
   },

@@ -1,19 +1,22 @@
-![CF](http://i.imgur.com/7v5ASc8.png) LAB 14
+![CF](http://i.imgur.com/7v5ASc8.png) LAB
 =================================================
 
-## API Server
+## Lab 14 API Server
 
 ### Author: Fletcher LaRue
 
 ### Links and Resources
+[![Build Status](https://www.travis-ci.com/asdFletcher/14-orm-and-modeling.svg?branch=master)](https://www.travis-ci.com/asdFletcher/14-orm-and-modeling)
+
 * [repo](https://github.com/asdFletcher/14-orm-and-modeling)
-<!-- * [travis](http://xyz.com)
-* [back-end](http://xyz.com) (when applicable)
-* [front-end](http://xyz.com) (when applicable) -->
+* [travis](https://www.travis-ci.com/asdFletcher/14-orm-and-modeling)
+* [back-end](https://fl-14-orm.herokuapp.com/)
 
 #### Documentation
-* [swagger](http://xyz.com) (API assignments only)
-* [jsdoc](http://xyz.com) (All assignments)
+* [swagger](https://fl-14-orm.herokuapp.com/docs/swagger)
+* [jsdoc](https://fl-14-orm.herokuapp.com/docs)
+
+
 
 ### Modules
 #### `modulename.js`
