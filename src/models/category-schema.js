@@ -26,11 +26,7 @@ category.pre('find', function() {
 
 category.pre('save', function() {
   try {
-    console.log(' in the category pre save ');
-    console.log(`this: `, this);
     this.store = `Fletcher's store`;
-    this.description = 'test';
-    console.log(`this: `, this);
   } catch (err) {
     console.error('save error: ', err);
   }

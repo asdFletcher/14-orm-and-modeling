@@ -7,7 +7,6 @@ class DataModel {
   }
 
   get(_id) {
-    console.log('_id: ', _id);
     let queryObject = _id ? {_id} : {};
     return this.schema.find(queryObject);
   }

@@ -8,7 +8,7 @@ const morgan = require('morgan');
 // Esoteric Resources
 const errorHandler = require( './middleware/error.js');
 const notFound = require( './middleware/404.js' );
-const routerAPI = require( './routes/routerAPI.js' );
+const routerAPI = require( './api/routerAPI.js' );
 
 // Prepare the express app
 const app = express();
