@@ -30,22 +30,27 @@ describe('api server', () => {
 
   });
 
-  it('should respond properly on request to /api/v1/teams', () => {
+  it('should respond properly on request to /api/v1/product', () => {
 
     return mockRequest
-      .get('/api/v1/teams')
+      .get('/api/v1/product')
       .then(results => {
         expect(results.status).toBe(200);
       });
 
   });
 
-  it('should be able to post to /api/v1/teams', () => {
+  it('should be able to post to /api/v1/product', () => {
 
-    let obj = {name:'test'};
-
+    let obj = {
+      name: 'Winter Jacket',
+      category: 'winter clothing',
+      color:'orange',
+      price: 90,
+      brand:'Colombia'
+    };
     return mockRequest
-      .post('/api/v1/teams')
+      .post('/api/v1/product')
       .send(obj)
       .then(results => {
         expect(results.status).toBe(200);
@@ -54,33 +59,40 @@ describe('api server', () => {
 
   });
 
-  it('should be able to post to /api/v1/players', ()  => {
-
-    let obj = {name:'John', bats:'R',throws:'R',position:'C',team:'Bunnies'};
+  it('should be able to post to /api/v1/category', ()  => {
+    let obj = {
+      name: 'winter clothing',
+      description: 'Mens and womens clothing',
+      seasonal: true,
+    };
 
     return mockRequest
-      .post('/api/v1/players')
+      .post('/api/v1/category')
       .send(obj)
       .then(results => {
         expect(results.status).toBe(200);
-        expect(results.body.team).toEqual(obj.team);
+        expect(results.body.description).toEqual(obj.description);
       });
 
   });
 
 
-  it('following a post to players, should find a single record', () => {
+  it('following a post to category, should find a single record', () => {
 
-    let obj = {name:'John', bats:'R',throws:'R',position:'C',team:'Bunnies'};
+    let obj = {
+      name: 'winter clothing',
+      description: 'Mens and womens clothing',
+      seasonal: true,
+    };
 
     return mockRequest
-      .post('/api/v1/players')
+      .post('/api/v1/category')
       .send(obj)
       .then(results => {
-        return mockRequest.get(`/api/v1/players/${results.body._id}`)
+        return mockRequest.get(`/api/v1/category/${results.body._id}`)
           .then(list => {
             expect(list.status).toBe(200);
-            expect(list.body.team).toEqual(obj.team);
+            expect(list.body.name).toEqual(obj.name);
           });
       });
 

@@ -1,21 +1,6 @@
 'use strict';
 
-const express = require('express');
 
-const modelFinder = require('../middleware/model-finder.js');
-const router = express.Router();
-
-router.param('model', modelFinder);
-
-// ROUTES
-router.get('/api/v1/:model', handleGetAll);
-router.post('/api/v1/:model', handlePost);
-
-router.get('/api/v1/:model/:id', handleGetOne);
-router.put('/api/v1/:model/:id', handlePut);
-router.delete('/api/v1/:model/:id', handleDelete);
-
-// FUNCTIONS
 function handleGetAll(req,res,next) {
   req.model.get()
     .then( data => {
@@ -52,4 +37,10 @@ function handleDelete(req,res,next) {
     .catch( next );
 }
 
-module.exports = router;
+module.exports = {
+  handleGetAll,
+  handleGetOne,
+  handlePost,
+  handlePut,
+  handleDelete,
+};
